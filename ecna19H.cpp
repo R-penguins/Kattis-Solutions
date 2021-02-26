@@ -10,7 +10,8 @@ int mod(int a, int b)
 
 int gcd(int a, int b)
 {
-    while (b) {
+    while (b)
+    {
         int t = a % b;
         a = b;
         b = t;
@@ -30,9 +31,15 @@ int extended_euclid(int a, int b, int &x, int &y)
     while (b)
     {
         int q = a / b;
-        int t = b; b = a % b; a = t;
-        t = xx; xx = x - q * xx; x = t;
-        t = yy; yy = y - q * yy; y = t;
+        int t = b;
+        b = a % b;
+        a = t;
+        t = xx;
+        xx = x - q * xx;
+        x = t;
+        t = yy;
+        yy = y - q * yy;
+        y = t;
     }
     return a;
 }
@@ -41,22 +48,25 @@ PII crt_single(int m1, int r1, int m2, int r2)
 {
   int s, t;
   int g = extended_euclid(m1, m2, s, t);
-  if (r1 % g != r2 % g) return make_pair(0, -1);
-  return make_pair(mod(s * r2 * m1 + t * r1 * m2, m1 * m2) / g, m1 * m2 / g);
+  if (r1 % g != r2 % g)
+    return {0, -1};
+  return {mod(s * r2 * m1 + t * r1 * m2, m1 * m2) / g, m1 * m2 / g};
 }
 
-// PII crt(const vector<int> &m, const vector<int> &r) 
-// {
-//     PII ret = make_pair(r[0], m[0]);
-//     for (int i = 1; i < m.size(); i++) 
-//     {
-//         ret = crt_single(ret.second, ret.first, m[i], r[i]);
-//         if (ret.second == -1) break;
-//         cout << "ret is " << ret.first << ' ' << ret.second << endl; //debug
-//     }
-//     return ret;
-// }
+PII crt(const vector<int> &m, const vector<int> &r) 
+{
+    PII ret = make_pair(r[0], m[0]);
+    for (int i = 1; i < m.size(); i++) 
+    {
+        ret = crt_single(ret.second, ret.first, m[i], r[i]);
+        if (ret.second == -1)
+            break;
+        cout << "ret is " << ret.first << ' ' << ret.second << endl; //debug
+    }
+    return ret;
+}
 
+/*
 int crt(const vector<int> &m, const vector<int> &r)
 {
     int a = 1;
@@ -76,6 +86,7 @@ int crt(const vector<int> &m, const vector<int> &r)
         a++;
     }
 }
+*/
 
 int main(int argc, char const *argv[])
 {
@@ -101,16 +112,18 @@ int main(int argc, char const *argv[])
     boxsize.pop_back();
   }
 
-//   PII ans_pair = crt(top_size, rem);
-//   int ans = ans_pair.first, modulo = ans_pair.second;
-//   cout << ans << ' ' << modulo << endl; // debug
-//   while (ans < minlim)
-//     ans += modulo;
+  PII ans_pair = crt(top_size, rem);
+  int ans = ans_pair.first, modulo = ans_pair.second;
+  cout << ans << ' ' << modulo << endl; // debug
+  while (ans < minlim)
+    ans += modulo;
 
+/*
   int ans = crt(top_size, rem);
   int least_cm = lcm(lcm(top_size[0], top_size[1]), top_size[2]);
   while (ans < minlim)
     ans += least_cm;
+  */
 
   cout << ans << endl;
   return 0;
