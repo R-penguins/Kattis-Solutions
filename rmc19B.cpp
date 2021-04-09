@@ -26,26 +26,26 @@ int main(int argc, char const *argv[])
   }
   int p;
   cin >> p;
-  VS rank_name(p);
-  for (string& str : rank_name)
+  VS names(p);
+  for (string& str : names)
     cin >> str;
-  map<string, int> name_rank;
+  map<string, int> ranks;
   for (int i = 0; i < p; ++i)
-    name_rank[rank_name[i]] = i;
+    ranks[names[i]] = i;
   VVI pref(n);
   for (int i = 0; i < n; ++i)
   {
-    pref[i] = VI(ori_list[i].size());
-    for (int j = 0; j < pref[i].size(); ++j)
-      pref[i][j] = name_rank[ori_list[i][j]];
+    VI& team_pref = pref[i];
+    team_pref = VI(ori_list[i].size());
+    for (int j = 0; j < team_pref.size(); ++j)
+      team_pref[j] = ranks[ori_list[i][j]];
   }
 
   VVI players(n, VI(k));
-  VI pref_ptr(n);
+  VI pref_ptr(n); // can use a queue instead
   vector<bool> selected(p);
   int availble = 0;
   for (int round = 0; round < k; ++round)
-  {
     for (int team = 0; team < n; ++team)
     {
       while (pref_ptr[team] < pref[team].size() && selected[pref[team][pref_ptr[team]]])
@@ -65,12 +65,11 @@ int main(int argc, char const *argv[])
       players[team][round] = player;
       selected[player] = true;
     }
-  }
 
   for (auto& team : players)
   {
     for (int i : team)
-      cout << rank_name[i] << " ";
+      cout << names[i] << " ";
     cout << "\n";
   }
   return 0;

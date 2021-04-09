@@ -175,7 +175,6 @@ int main(int argc, char const *argv[])
     cin >> i;
   
   // find main diagnal
-
   int max_h = 0;
   Pt max_h_pt;
   for (int i = 0; i < 6; ++i)
