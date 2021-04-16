@@ -2,16 +2,7 @@
 using namespace std;
 using VI = vector<int>;
 using VVI = vector<VI>;
-using VD = vector<double>;
-using VVD = vector<VD>;
-using VS = vector<string>;
-using VVS = vector<VS>;
 using VB = vector<bool>;
-using VVB = vector<VB>;
-using PII = pair<int, int>;
-using PDD = pair<double, double>;
-constexpr double pi = 3.1415926535897932385;
-constexpr double EPS = 1e-12;
 
 struct Edge {
   int index, val;
@@ -39,7 +30,7 @@ int main(int argc, char const *argv[])
   int army = s[0];
   auto cmp = [](Edge& a, Edge& b) { return a.val > b.val; };
   priority_queue<Edge, vector<Edge>, decltype(cmp)> q(cmp);
-  vector<bool> vis(N);
+  VB vis(N);
   vis[0] = true;
   for (int i : adj[0]) {
     vis[i] = true;
