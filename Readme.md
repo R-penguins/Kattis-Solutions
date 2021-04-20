@@ -1,6 +1,6 @@
 # Kattis Solutions
 
-Solutions to Kattis problems
+Solutions to problems on the Kattis platform. Problem statements can be found with https://open.kattis.com/problems/ + solution file name.
 
 ## Contests
 
