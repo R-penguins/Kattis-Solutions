@@ -1,4 +1,5 @@
 /// ICPC RMC 2020 B Arithmetic Decoding
+/// simulation
 #include <bits/stdc++.h>
 using namespace std;
 

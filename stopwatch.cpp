@@ -1,4 +1,4 @@
-/// ICPC RMC 2020 A 
+/// ICPC RMC 2020 A Stop Watch
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,4 +1,5 @@
 /// ICPC RMC 2020 C Paper Snowflakes
+/// discreatlize
 #include <bits/stdc++.h>
 using namespace std;
 using LL = long long;
