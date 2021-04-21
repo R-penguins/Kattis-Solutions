@@ -13,6 +13,8 @@ B  | [arithmeticdecoding](arithmeticdecoding.cpp) | math, implementation | numer
 C  | [papersnowflakes](papersnowflakes.cpp) | implementation | discretization
 E  | [interviewqueue](interviewqueue.cpp) | data structures | linked list
 F  | [conquest](conquest.cpp) | graphs, shortest paths | Dijkstra's
+G  | [distance](distance.cpp) | math | prefix sum
+H  | [antimatterrain](antimatterrain.cpp) | data structures, implementation | RMQ, segment tree, discretization
 
 ## Codeforces tags
 
