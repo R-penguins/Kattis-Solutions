@@ -8,13 +8,22 @@ Solutions to problems on the Kattis platform. Problem statements can be found wi
 
 ID | solution | Codeforces tags | details
 ---|----------|-----------------|---
-A  | [stopwatch](stopwatch.cpp) | implementation | easy
+A  | [stopwatch](stopwatch.cpp) | | easy
 B  | [arithmeticdecoding](arithmeticdecoding.cpp) | math, implementation | numerics, simulation
 C  | [papersnowflakes](papersnowflakes.cpp) | implementation | discretization
 E  | [interviewqueue](interviewqueue.cpp) | data structures | linked list
 F  | [conquest](conquest.cpp) | graphs, shortest paths | Dijkstra's
 G  | [distance](distance.cpp) | math | prefix sum
 H  | [antimatterrain](antimatterrain.cpp) | data structures, implementation | RMQ, segment tree, discretization
+
+### ICPC Mid-Central USA Regional 2019
+
+ID | solution | Codeforces tags | details
+---|----------|-----------------|---
+A  | [basketballoneonone](basketballoneonone.cpp) | | easy
+F  | [dragonball1](dragonball1.cpp) | graphs, shortest paths | Dijkstra's, enumeration
+I  | [softpasswords](softpasswords.cpp) | strings | easy
+L  | [ummcode](ummcode.cpp) | | easy
 
 ## Codeforces tags
 
